@@ -1,0 +1,34 @@
+= active-record-enumerable
+
+Installation
+
+  script/plugin install git://github.com/ddollar/active-record-enumerable.git
+  
+Usage
+
+  class Food < ActiveRecord::Base
+    include ActiveRecordEnumerable
+
+    enumerate :type,  :as => %w( fruit vegetable ), :default => 'foo'
+    enumerate :color, :as => %w( red green )
+  end
+
+Example
+
+  >> f = Food.new
+  => #<Food id: nil, type: "foo", color: "red">
+  >> f.save
+  => true
+
+  >> f.color.red?
+  => true
+
+  >> f.color.turquoise?
+  => false
+
+  >> f.update_attributes!(:color => "random")
+  => ActiveRecord::RecordInvalid: Validation failed: Color is not included in the list
+
+License
+
+MIT License.
