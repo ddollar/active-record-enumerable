@@ -29,6 +29,4 @@ Example
   >> f.update_attributes!(:color => "random")
   => ActiveRecord::RecordInvalid: Validation failed: Color is not included in the list
 
-License
-
-MIT License.
+MIT License
