@@ -9,7 +9,7 @@ Usage
   class Food < ActiveRecord::Base
     include ActiveRecordEnumerable
 
-    enumerate :type,  :as => %w( fruit vegetable ), :default => 'foo'
+    enumerate :type,  :as => %w( fruit vegetable ), :default => 'fruit'
     enumerate :color, :as => %w( red green )
   end
 
